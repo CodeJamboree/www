@@ -1,0 +1,19 @@
+{
+  "name": "@codejamboree/www",
+  "version": "0.0.1",
+  "description": "Company Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeJamboree/www.git"
+  },
+  "author": "",
+  "license": "Copyright (C) 2022 Lewis Moten",
+  "bugs": {
+    "url": "https://github.com/CodeJamboree/www/issues"
+  },
+  "homepage": "https://github.com/CodeJamboree/www#readme"
+}
