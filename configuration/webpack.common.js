@@ -21,7 +21,7 @@ module.exports = () => {
     ],
     module: {
       rules: [
-          { test: /\.tsx?/, use: 'babel-loader', exclude: /node_modules/ },
+          { test: /\.tsx?/, use: 'ts-loader', exclude: /node_modules/ },
           {
               test: /\.js$/,
               use: 'source-map-loader',
@@ -32,7 +32,7 @@ module.exports = () => {
         ],
     },
     resolve: {
-      extensions: ['.ts', '.js', '.jsx', '.json'],
+      extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
       fallback: {
         buffer: require.resolve('buffer/'),
         crypto: require.resolve('crypto-browserify'),
