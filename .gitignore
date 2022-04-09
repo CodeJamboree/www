@@ -86,3 +86,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Packages
+node_modules
+
+# Build Output
+dist
