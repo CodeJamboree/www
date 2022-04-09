@@ -7,6 +7,13 @@ const config = {
           modules: false,
         },
       ],
+      [
+        '@babel/preset-typescript',
+        {
+          isTSX: true,
+          allExtensions: true
+        }
+      ],
       '@babel/preset-react',
     ],
     plugins: [
@@ -30,6 +37,5 @@ const config = {
       },
     },
   };
-
 
   module.exports = config;
