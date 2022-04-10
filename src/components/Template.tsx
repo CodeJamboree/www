@@ -6,12 +6,10 @@ interface ITemplate {
 }
 
 const Template = ({ children }: ITemplate) => 
-<div>
+<>
     <Header />
-    <hr />
     {children}
-    <hr />
     <Footer />
-</div>
+</>
 
 export default Template;
