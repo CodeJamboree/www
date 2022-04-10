@@ -13,7 +13,9 @@ module.exports = () => {
       path: path.resolve(__dirname, '../dist'),
     },
     plugins: [
-      new HtmlWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        favicon: './src/assets/logo256x256.png'
+      }),
       new webpack.EnvironmentPlugin(['NODE_ENV']),
       new webpack.ProvidePlugin({
         Buffer: ['buffer', 'Buffer'],
