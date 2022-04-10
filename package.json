@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/CodeJamboree/www.git"
   },
-  "author": "",
-  "license": "Copyright (C) 2022 Lewis Moten",
+  "author": "Code Jamboree LLC",
+  "license": "Copyright (C) 2022 Code Jamboree LLC",
   "bugs": {
     "url": "https://github.com/CodeJamboree/www/issues"
   },
