@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import appData from '../appData';
+import Header from './Header';
+import Footer from './Footer';
 
 interface ITemplate {
     children: JSX.Element;
@@ -7,12 +7,11 @@ interface ITemplate {
 
 const Template = ({ children }: ITemplate) => 
 <div>
-    {appData.name}
+    <Header />
     <hr />
     {children}
     <hr />
-    {appData.license}
-
+    <Footer />
 </div>
 
 export default Template;
