@@ -1,21 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import ErrorBoundary from './components/ErrorBoundary';
-import Template from './components/Template';
 import configureStore from './state/configureStore';
-
+import Router from './components/Router';
 const { store, persistor } = configureStore();
 
-ReactDOM.render(
-    (
+const root = ReactDOM.createRoot(
+    document.getElementById("root")!
+);
+
+root.render(
     <React.StrictMode>
         <ErrorBoundary>
             <Provider store={store}>
-                <Template>
-                    <div>Hello World</div>
-                </Template>
+                <Router />
             </Provider>
         </ErrorBoundary>
     </React.StrictMode>
-    ), document.getElementById("root"));
+);
