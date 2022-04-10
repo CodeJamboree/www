@@ -1,0 +1,35 @@
+declare module "@mui/material/styles" {
+  interface Theme {
+    status: {
+      danger: React.CSSProperties["color"];
+    }
+  }
+
+  interface Theme {
+    palette: {
+      neutral: DefaultPaletteOptions["primary"]
+    }
+  }
+  interface DefaultPaletteOptions extends PaletteOptions {
+    primary?: SimplePaletteColorOptions;
+  }
+
+  interface Palette {
+    neutral: DefaultPaletteOptions["primary"];
+  }
+  interface PaletteOptions {
+    neutral: DefaultPaletteOptions["primary"];
+  }
+
+  interface PaletteColor {
+    darker?: string;
+  }
+  interface SimplePaletteColorOptions {
+    darker?: string;
+  }
+  interface ThemeOptions {
+    status: {
+      danger: React.CSSProperties["color"];
+    };
+  }
+}
