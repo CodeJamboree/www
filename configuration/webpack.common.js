@@ -21,6 +21,10 @@ module.exports = () => {
     ],
     module: {
       rules: [
+        {
+          test: /\.png$/i,
+          use: [ { loader: 'file-loader' }]
+        },
           { test: /\.tsx?/, use: 'ts-loader', exclude: /node_modules/ },
           {
               test: /\.js$/,
@@ -32,7 +36,8 @@ module.exports = () => {
         ],
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
+      extensions: [
+        '.tsx', '.ts', '.js', '.jsx', '.json'],
       fallback: {
         buffer: require.resolve('buffer/'),
         crypto: require.resolve('crypto-browserify'),
