@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import Contact from "../containers/Contact";
-import Home from "../containers/Home";
-import Fallback from "../containers/Fallback";
+import Contact from "../Contact";
+import Home from "../Home";
+import Fallback from "../Fallback";
 
 const Router = () => (
     <HashRouter>
