@@ -1,4 +1,5 @@
 /* eslint-env node */
+const CopyPlugin = require("copy-webpack-plugin");
 const common = require("./webpack.common");
 
 module.exports = (env, argv) => {
@@ -27,6 +28,14 @@ module.exports = (env, argv) => {
           },
         },
       ],
-    }
+    },
+    plugins: [
+      ...config.plugins,
+      new CopyPlugin({
+        patterns: [
+          { from: "src/robots.txt" }
+        ]
+      })
+    ]
   };
 };
