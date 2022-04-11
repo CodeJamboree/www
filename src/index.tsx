@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import * as ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
 import ErrorBoundary from './components/ErrorBoundary';
+import Provider from './components/Provider';
 import FallbackMessage from './components/FallbackMessage';
 import configureStore from './state/configureStore';
 import Router from './containers/Router';
@@ -14,11 +14,13 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <ErrorBoundary>
-            <Provider store={store}>
-                <Suspense fallback={<FallbackMessage message="Loading Router"/>}>
-                    <Router />
-                </Suspense>
-            </Provider>
+            <Suspense fallback={<FallbackMessage message="Loading Provider"/>}>
+                <Provider store={store}>
+                    <Suspense fallback={<FallbackMessage message="Loading Router"/>}>
+                        <Router />
+                    </Suspense>
+                </Provider>
+            </Suspense>
         </ErrorBoundary>
     </React.StrictMode>
 );
