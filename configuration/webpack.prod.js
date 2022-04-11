@@ -1,15 +1,15 @@
 /* eslint-env node */
-const common = require('./webpack.common');
+const common = require("./webpack.common");
 
 module.exports = (env, argv) => {
-  argv.mode = 'production';
+  argv.mode = "production";
 
   let config = common(env, argv);
 
   return {
     ...config,
-    mode: 'production',
-    devtool: 'source-map',
+    mode: "production",
+    devtool: "source-map",
     module: {
       ...config.module,
       rules: [
@@ -18,15 +18,15 @@ module.exports = (env, argv) => {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
               cacheDirectory: true,
               cacheCompression: false,
-              envName: 'production',
+              envName: "production",
             },
           },
         },
       ],
-    },
+    }
   };
 };
