@@ -1,4 +1,5 @@
-import Template from "../components/Template";
+import { useSelector } from 'react-redux';
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -9,8 +10,9 @@ import EmailIcon from "@mui/icons-material/Email";
 import PersonIcon from "@mui/icons-material/Person";
 import BusinessIcon from "@mui/icons-material/Business";
 import WorkIcon from "@mui/icons-material/Work";
-import { useSelector } from 'react-redux';
-import * as selectors from '../state/settings/selectors';
+
+import Template from "../../components/Template";
+import * as selectors from '../../state/settings/selectors';
 
 const Contact = () => {
     const email = useSelector(selectors.selectContactEmail);

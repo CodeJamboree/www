@@ -3,10 +3,9 @@ import { useMemo } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import buildTheme from './buildTheme';
 
 interface ITemplate {

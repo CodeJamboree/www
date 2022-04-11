@@ -1,18 +1,18 @@
 import { Suspense } from "react";
-import Fallback from "./Fallback";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Contact from "../containers/Contact";
 import Home from "../containers/Home";
+import Fallback from "../containers/Fallback";
 
 const Router = () => (
-    <Suspense fallback={<Fallback message="Loading Route" />}>
-        <HashRouter>
+    <HashRouter>
+        <Suspense fallback={<Fallback />}>
             <Routes>
                 <Route path="/contact" element={< Contact />} />
                 <Route path="*" element={< Home />} />
             </Routes>
-        </HashRouter>
-    </Suspense>
+        </Suspense>
+    </HashRouter>
 );
 
 export default Router;
