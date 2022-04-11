@@ -18,6 +18,7 @@ module.exports = () => {
         favicon: './src/assets/logo256x256.png',
         meta: {
           'Content-Type': { 'http-equiv': 'Content-Type', 'content': 'text/html; charset=utf-8' },      
+          description: 'IT Consulting Services for frontend, backend, and fullstack web development',
           viewport: "initial-scale=1, width=device-width"
         }
       }),
