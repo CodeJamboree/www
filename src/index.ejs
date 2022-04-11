@@ -12,9 +12,76 @@
   </head>
   <body>
     <div id="root">
-      <H1><%= htmlWebpackPlugin.options.title %></H1>
-      <p><%= htmlWebpackPlugin.options.meta.description %></p>
-      <noscript><p>Best experienced with JavaScript enabled.</p></noscript>
+      <div itemscope itemtype=”http://schema.org/Organization>
+        <H1>Welcome to <span itemprop="name"><%= htmlWebpackPlugin.options.title %></span></H1>
+        <p itemprop="description"><%= htmlWebpackPlugin.options.meta.description %></p>
+        <ul>
+          <li>
+              Using the latest technologies with 
+              <span itemprop="knowsAbout">React</span> 
+              <span itemprop="knowsAbout">frontend</span>
+              <span itemprop="knowsAbout">web applications</span> and
+              <span itemprop="knowsAbout">AWS</span> 
+              <span itemprop="knowsAbout">backend</span> 
+              <span itemprop="knowsAbout">server architecture</span>.
+          </li>
+          <li>Over 22 years of experience in the 
+            <span itemprop="knowsAbout">IT Industry</span>
+            <span itemprop="knowsAbout">programming</span>,
+            as well as an
+            <span itemprop="hasCredential">Associates of Arts in Information Technology</span>.
+          </li>
+          <li>
+            Serving the 
+            <span itemprop="areaServed">Mid-Atlantic region</span>, 
+            including <span itemprop="areaServed">Washington, DC</span>,
+            <span itemprop="areaServed">Alexandria, VA</span>, 
+            <span itemprop="areaServed">Fairfax, VA</span>, 
+            and <span itemprop="areaServed">Herndon, VA</span>.
+          </li>
+          <li>
+              Working
+              <span itemprop="location">remote</span>,
+              and located in
+              <span itemprop="foundingLocation">Front Royal, Virigina, USA</span>
+              at the end of <span itemprop="areaServed">I-66</span>.
+          </li>
+          <li>Inquire about 
+            <span itemProps="seeks">
+            <span itemprop="makesOffer">1099 Contracts</span>
+             & 
+             <span itemprop="makesOffer">Corp-to-Corp</span>.
+            </span>
+          </li>
+          <li>Contact <span itemprop="founder">Lewis E Moten</span>
+            <ul>
+              <li>
+                <strong>Email:</strong>
+                <a itemprop="email" href="mailto:hello@codejamboree.com">hello@codejamboree.com</a>
+              </li>
+              <li>
+                <strong>Address:</strong>
+                <span itemprop="location">PO Box 202, Front Royal, VA 22630</span>
+              </li>
+              <li>
+                <strong>Phone:</strong>
+                <a href="tel:+15305394775" itemprop="telephone">+1 (530) 539-4775</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <noscript>
+          <p>
+            This
+            <span itemprop="knowsAbout">web site</span>
+            has a great
+            <span itemprop="knowsAbout">user interface design</span>
+            with
+            <span itemprop="knowsAbout">JavaScript</span>
+            enabled.
+          </p>
+          </noscript>
+      </div>
     </div>
   </body>
 </html>
