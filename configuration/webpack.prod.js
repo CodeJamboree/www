@@ -33,7 +33,7 @@ module.exports = (env, argv) => {
       ...config.plugins,
       new CopyPlugin({
         patterns: [
-          { from: "src/robots.txt" }
+          { from: "src/seo" }
         ]
       })
     ]
