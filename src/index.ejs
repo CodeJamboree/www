@@ -12,9 +12,9 @@
   </head>
   <body>
     <div id="root">
-      Content not loaded.
-      <noscript>JavaScript not enabled.</noscript>
+      <H1><%= htmlWebpackPlugin.options.title %></H1>
+      <p><%= htmlWebpackPlugin.options.meta.description %></p>
+      <noscript><p>Best experienced with JavaScript enabled.</p></noscript>
     </div>
-    <%= htmlWebpackPlugin.tags.bodyTags %>
   </body>
 </html>
