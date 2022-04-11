@@ -1,0 +1,10 @@
+{
+    "name": "Code Jamboree LLC",
+    "short_name": "Code Jamboree",
+    "start_url": ".",
+    "description": "IT Consulting Services for frontend, backend, and fullstack web development",
+    "icons": [
+      { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+      { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+    ]
+  }
