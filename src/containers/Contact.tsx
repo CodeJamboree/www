@@ -1,17 +1,11 @@
 import Template from "../components/Template";
-import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import Card from "@mui/material/Card";
 import EmailIcon from "@mui/icons-material/Email";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice";
 import PersonIcon from "@mui/icons-material/Person";
 import BusinessIcon from "@mui/icons-material/Business";
 import WorkIcon from "@mui/icons-material/Work";
