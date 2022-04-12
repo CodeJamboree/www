@@ -19,7 +19,7 @@ const purpleShadowJ = '#502264';
 const grayTradeName = '#555454';
 const yellowForShadow = '#d4d644'; // not in our logo
 
-const palette = {
+const lightPalette = {
     primary: {
         main: darkIndegoBusinessCardBackground,
     },
@@ -42,7 +42,32 @@ const palette = {
     contrastThreshold: 3,
     tonalOffset: 0.2
 }
-
+const darkPalette = {
+    background: {
+        paper:darkIndegoBusinessCardBackground
+    },
+    primary: {
+        main: grayTradeName,
+    },
+    secondary: {
+        main: lightBlueC,
+    },
+    info: {
+        main: lightBlueC,
+    },
+    success: {
+        main: lightGreenEllipses,
+    },
+    warning: {
+        main: purpleJ,
+    },
+    error: {
+        main: purpleShadowJ,
+        contrastText: yellowForShadow
+    },
+    contrastThreshold: 3,
+    tonalOffset: 0.2
+}
 // Avenir is the font used within our branding
 const fontFamily = [
     primaryFontName,
@@ -59,7 +84,7 @@ const buildTheme = (prefersDarkColorScheme: boolean) => createTheme({
     },
     palette: {
       mode: prefersDarkColorScheme ? 'dark' : 'light',
-        ...palette
+        ...prefersDarkColorScheme ? darkPalette : lightPalette
       }
 })
 
