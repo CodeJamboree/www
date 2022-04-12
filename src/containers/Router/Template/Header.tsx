@@ -1,30 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useLocation } from 'react-router-dom';
-import * as settingsSelectors from '../state/settings/selectors';
+
 import AppBar from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
 import Toolbar from "@mui/material/Toolbar";
-import logo from "../assets/logo256x256.png";
 import Avatar from "@mui/material/Avatar";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 
+import * as settingsSelectors from '../../../state/settings/selectors';
+import logo from "../../../assets/logo256x256.png";
+
 const Header = (): JSX.Element => {
     let navigate = useNavigate();
     let location = useLocation();
+    const homePage = { label: "Home", value: '/' };
     const pages = [
-        { label: "Home", value: '/' },
+        homePage,
         { label: "Contact", value: '/contact' },
     ];
 
-    const [bottomNavigationValue] = useState(
+    const [page, setPage] = useState(
         location.pathname
     );
+    useEffect(()=> {
+        setPage(location.pathname);
+    }, [location.pathname]);
 
-    const currentPage = pages.find(p => p.value === bottomNavigationValue);
+    const currentPage = pages.find(p => p.value === page) ?? homePage;
 
     const handleChange = (_event: React.SyntheticEvent, value: any) => {
         navigate(value);

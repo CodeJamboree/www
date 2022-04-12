@@ -6,12 +6,12 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
 import EmailIcon from "@mui/icons-material/Email";
 import PersonIcon from "@mui/icons-material/Person";
 import BusinessIcon from "@mui/icons-material/Business";
 import WorkIcon from "@mui/icons-material/Work";
 
-import Template from "../../components/Template";
 import * as selectors from '../../state/settings/selectors';
 
 const Contact = () => {
@@ -21,7 +21,7 @@ const Contact = () => {
     const mail = useSelector(selectors.selectContactMail);
     const name = useSelector(selectors.selectContactName);
 
-    return <Template>
+    return <>
         <Typography variant="h3" color="primary">Contact Us</Typography>
         <Typography variant="body2">Want to get in touch? We'd love to hear from you.</Typography>
         <Paper variant="outlined">
@@ -45,12 +45,16 @@ const Contact = () => {
                         <EmailIcon />
                     </ListItemAvatar>
                     <ListItemText primary="Email" secondary={
-                        <Typography sx={{ display: "inline" }}
-                            component="span"
-                            variant="body2"
-                            color="text.info">
-                            <a href={emailUrl}>{email}</a>
-                        </Typography>
+                        <Button
+                        variant="text"
+                        component="a"
+                        target="_top"
+                        rel="noopener noreferrer"
+                        sx={{textTransform: 'none'}}
+                        color="info"
+                        href={emailUrl}>
+                            {email}
+                        </Button>
                     } />
                 </ListItem>
                 <ListItem alignItems="flex-start">
@@ -88,6 +92,6 @@ const Contact = () => {
         </Paper>
 
 
-    </Template>;
+    </>;
 }
 export default Contact;

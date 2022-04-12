@@ -1,13 +1,14 @@
 import { combineReducers } from "redux";
 
+import preferences from "./preferences";
 import settings from "./settings";
 
 import * as actions from "./actions";
-import { State } from "history";
 import { Action } from "redux-actions";
 import createRootState from './createRootState';
 
 const reducers = {
+  preferences,
   settings
 };
 
