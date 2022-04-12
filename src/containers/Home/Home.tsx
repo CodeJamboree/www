@@ -2,7 +2,6 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 
-import Template from '../../components/Template';
 import logo from "../../assets/logo256x256.png";
 import * as selectors from '../../state/settings/selectors';
 import { useSelector } from 'react-redux';
@@ -10,7 +9,7 @@ import { useSelector } from 'react-redux';
 const Home = () => {
     const name = useSelector(selectors.selectName);
 
-    return <Template>
+    return <>
         <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center" style={{ minHeight: '80vh' }}>
             <Grid item xs={3}>
                 <img src={logo} />
@@ -29,7 +28,7 @@ const Home = () => {
             </Grid>
         </Grid>
 
-    </Template>
+    </>
 };
 
 export default Home;

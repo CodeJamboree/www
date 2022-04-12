@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { useNavigate, useLocation } from 'react-router-dom';
-import * as settingsSelectors from '../state/settings/selectors';
+
 import AppBar from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
 import BottomNavigation from '@mui/material/BottomNavigation';
@@ -11,16 +11,22 @@ import ContactsIcon from '@mui/icons-material/Contacts';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
+import * as settingsSelectors from '../../../state/settings/selectors';
+
 const Header = (): JSX.Element => {
     let navigate = useNavigate();
     let location = useLocation();
 
-    const [bottomNavigationValue, setBottomNavigationValue] = useState(
+    const [page, setPage] = useState(
         location.pathname
     );
 
+    useEffect(()=> {
+        setPage(location.pathname);
+    }, [location.pathname]);
+
     const onChangeBottomNavigation = (_event: any, value: string) => {
-        setBottomNavigationValue(value);
+        setPage(value);
         navigate(value);
     };
 
@@ -31,7 +37,7 @@ const Header = (): JSX.Element => {
                 <Box sx={{ display: { xs: 'block', md: 'none' } }}>
 
                     <BottomNavigation
-                        value={bottomNavigationValue}
+                        value={page}
                         onChange={onChangeBottomNavigation}
                     >
                         <BottomNavigationAction

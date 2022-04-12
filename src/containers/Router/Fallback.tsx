@@ -1,12 +1,11 @@
 import Typography from "@mui/material/Typography";
-import Template from "../components/Template";
 import CircularProgress from '@mui/material/CircularProgress';
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 
 const Fallback = () => {
 
-    return <Template>
+    return <>
         <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center" style={{ minHeight: '80vh' }}>
         <Grid item xs={3}>
         <CircularProgress />
@@ -25,6 +24,6 @@ const Fallback = () => {
         </Grid>
     </Grid>
 
-    </Template>;
+    </>;
 }
 export default Fallback;

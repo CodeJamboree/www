@@ -11,7 +11,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import BusinessIcon from "@mui/icons-material/Business";
 import WorkIcon from "@mui/icons-material/Work";
 
-import Template from "../../components/Template";
 import * as selectors from '../../state/settings/selectors';
 
 const Contact = () => {
@@ -21,7 +20,7 @@ const Contact = () => {
     const mail = useSelector(selectors.selectContactMail);
     const name = useSelector(selectors.selectContactName);
 
-    return <Template>
+    return <>
         <Typography variant="h3" color="primary">Contact Us</Typography>
         <Typography variant="body2">Want to get in touch? We'd love to hear from you.</Typography>
         <Paper variant="outlined">
@@ -88,6 +87,6 @@ const Contact = () => {
         </Paper>
 
 
-    </Template>;
+    </>;
 }
 export default Contact;
