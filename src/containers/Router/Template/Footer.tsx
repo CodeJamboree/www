@@ -12,6 +12,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
 import * as settingsSelectors from '../../../state/settings/selectors';
+import ThemeButton from './ThemeButton';
 
 const Header = (): JSX.Element => {
     let navigate = useNavigate();
@@ -53,10 +54,14 @@ const Header = (): JSX.Element => {
                     </BottomNavigation>
                 </Box>
             </Container>
+            <Container sx={{display: 'flex'}}>
+                <Typography component="div" sx={{ flexGrow: 1 }}>
+                    {license}
+                </Typography>
 
-            <Typography component="div" sx={{ flexGrow: 1 }}>
-                {license}
-            </Typography>
+                <ThemeButton />
+        </Container>
+            
         </AppBar>
     );
 }
