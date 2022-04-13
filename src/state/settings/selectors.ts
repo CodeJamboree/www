@@ -11,3 +11,10 @@ export const selectContactEmail = createSelector(selectSlice, ({ contactEmail })
 export const selectContactEmailUrl = createSelector(selectContactEmail, email => `mailto:${email}`);
 export const selectContactLocalMail = createSelector(selectSlice, ({ contactLocalMail }) => contactLocalMail);
 export const selectContactMail = createSelector(selectSlice, ({ contactMail }) => contactMail);
+export const selectContactPhoneMobile = createSelector(selectSlice, ({ contactPhone }) => 
+    contactPhone?.find(({type}) => type === "mobile")?.number
+);
+
+export const selectContactPhoneMobileUrl = createSelector(selectContactPhoneMobile, 
+    number =>`tel:${number?.replace(/[^+\d]/g, '')}`
+);
