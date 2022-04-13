@@ -11,12 +11,15 @@ import EmailIcon from "@mui/icons-material/Email";
 import PersonIcon from "@mui/icons-material/Person";
 import BusinessIcon from "@mui/icons-material/Business";
 import WorkIcon from "@mui/icons-material/Work";
+import PhoneIcon from '@mui/icons-material/Phone';
 
 import * as selectors from '../../state/settings/selectors';
 
 const Contact = () => {
     const email = useSelector(selectors.selectContactEmail);
     const emailUrl = useSelector(selectors.selectContactEmailUrl);
+    const mobile = useSelector(selectors.selectContactPhoneMobile);
+    const mobileUrl = useSelector(selectors.selectContactPhoneMobileUrl);
     const localMail = useSelector(selectors.selectContactLocalMail);
     const mail = useSelector(selectors.selectContactMail);
     const name = useSelector(selectors.selectContactName);
@@ -38,6 +41,23 @@ const Contact = () => {
                                 color="text.primary">
                                 {address}
                             </Typography>)
+                    } />
+                </ListItem>
+                <ListItem alignItems="flex-start">
+                    <ListItemAvatar>
+                        <PhoneIcon />
+                    </ListItemAvatar>
+                    <ListItemText primary="Phone" secondary={
+                        <Button
+                        variant="text"
+                        component="a"
+                        target="_top"
+                        rel="noopener noreferrer"
+                        sx={{textTransform: 'none'}}
+                        color="info"
+                        href={mobileUrl}>
+                            {mobile}
+                        </Button>
                     } />
                 </ListItem>
                 <ListItem alignItems="flex-start">
