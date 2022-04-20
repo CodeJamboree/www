@@ -1,21 +1,22 @@
 /* eslint-env node */
-import { createStore, applyMiddleware } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import reduxSaga from "redux-saga";
 import reduxThunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 
-import rootReducer from "./index";
+import reducer from "./index";
 import rootSaga from "./saga";
 
 const initialHydratedState = undefined;
 
 const sagaMiddleware = reduxSaga();
 
-const enhance = applyMiddleware(reduxThunk, sagaMiddleware);
-const composed = composeWithDevTools({})(enhance);
-
-const configureStore = () => {
-  const store = createStore(rootReducer, initialHydratedState, composed);
+const exportedConfigureStore = () => {
+  const store = configureStore(
+    {
+      reducer,
+      middleware: [reduxThunk, sagaMiddleware]
+    }
+  );
 
   store.runSaga = sagaMiddleware.run;
   store.asyncReducers = {};
@@ -32,4 +33,4 @@ const configureStore = () => {
   return { store };
 };
 
-export default configureStore;
+export default exportedConfigureStore;
