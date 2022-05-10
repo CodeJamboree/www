@@ -5,7 +5,7 @@ import Provider from './components/Provider';
 import FallbackMessage from './components/FallbackMessage';
 import configureStore from './state/configureStore';
 import Router from './containers/Router';
-const { store, persistor } = configureStore();
+const { store } = configureStore();
 
 const root = ReactDOM.createRoot(
     document.getElementById("root")!
