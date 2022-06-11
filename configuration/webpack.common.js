@@ -14,6 +14,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
+        publicPath: '/',
         title: 'Code Jamboree LLC',
         meta: {
           'Content-Type': { 'http-equiv': 'Content-Type', 'content': 'text/html; charset=utf-8' },      
