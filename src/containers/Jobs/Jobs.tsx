@@ -5,10 +5,16 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Icon from "@mui/material/Icon";
+import * as selectors from '../../state/settings/selectors';
+import Button from "@mui/material/Button";
 
 import positions from './positions';
+import { useSelector } from "react-redux";
 
 const Jobs = () => {
+    const name = useSelector(selectors.selectName);
+    const emailUrl = useSelector(selectors.selectContactEmailUrl);
+    const email = useSelector(selectors.selectContactEmail);
 
     return <>
         <Typography variant="h3" color="primary">Employment</Typography>
@@ -20,13 +26,25 @@ const Jobs = () => {
                         <Icon>{icon}</Icon>
                     </ListItemAvatar>
                     <ListItemText primary={`${title} (${location})`} secondary={
-                        details?.map(({ header, text }, i) =>
+                        <>
+                        {details?.map(({ header, text }, i) =>
                             <Typography key={`details_${i}`} sx={{ display: "block" }}
                                 component="span"
                                 variant={header ? "body1" : "body2"}
                                 color={header ? "text.primary" : "text.secondary"}>
                                 {text}
-                            </Typography>)
+                            </Typography>)}
+                            <Button
+                        variant="text"
+                        component="a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{textTransform: 'none'}}
+                        color="info"
+                        href={`${emailUrl}?subject=${encodeURIComponent(`Resume for ${title}: [YOUR NAME HERE]`)}&body=${encodeURIComponent(`${name},\r\n\r\nI am interested in joining the team. Please see my attached resume as a candidate for the following position: ${title} (${location})\r\n\r\nThank you,\r\nYOUR NAME HERE`)}`}>
+                            Email Resume to {email}
+                        </Button>
+                       </>
                     } />
                 </ListItem>)
                 )}
