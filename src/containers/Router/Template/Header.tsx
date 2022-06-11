@@ -13,15 +13,11 @@ import Box from '@mui/material/Box';
 
 import * as settingsSelectors from '../../../state/settings/selectors';
 import logo from "../../../assets/logo256x256.png";
+import pages from '../pages';
 
 const Header = (): JSX.Element => {
     let navigate = useNavigate();
     let location = useLocation();
-    const homePage = { label: "Home", value: '/' };
-    const pages = [
-        homePage,
-        { label: "Contact", value: '/contact' },
-    ];
 
     const [page, setPage] = useState(
         location.pathname
@@ -30,7 +26,7 @@ const Header = (): JSX.Element => {
         setPage(location.pathname);
     }, [location.pathname]);
 
-    const currentPage = pages.find(p => p.value === page) ?? homePage;
+    const currentPage = pages.find(p => p.value === page) ?? pages[0];
 
     const handleChange = (_event: React.SyntheticEvent, value: any) => {
         navigate(value);

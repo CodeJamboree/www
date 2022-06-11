@@ -6,13 +6,13 @@ import AppBar from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import HomeIcon from '@mui/icons-material/Home';
-import ContactsIcon from '@mui/icons-material/Contacts';
+import Icon from '@mui/material/Icon';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
 import * as settingsSelectors from '../../../state/settings/selectors';
 import ThemeButton from './ThemeButton';
+import pages from '../pages';
 
 const Header = (): JSX.Element => {
     let navigate = useNavigate();
@@ -41,21 +41,19 @@ const Header = (): JSX.Element => {
                         value={page}
                         onChange={onChangeBottomNavigation}
                     >
-                        <BottomNavigationAction
-                            label="Home"
-                            value="/"
-                            icon={<HomeIcon />}
+                        {pages.map(({ label, value, icon}) => 
+                            <BottomNavigationAction
+                            key={value}
+                            label={label}
+                            value={value}
+                            icon={<Icon>{icon}</Icon>}
                         />
-                        <BottomNavigationAction
-                            label="Contact"
-                            value="/contact"
-                            icon={<ContactsIcon />}
-                        />
+                        )}
                     </BottomNavigation>
                 </Box>
             </Container>
             <Container sx={{display: 'flex'}}>
-                <Typography component="div" sx={{ flexGrow: 1 }}>
+                <Typography variant='body2' component="div" sx={{ flexGrow: 1 }}>
                     {license}
                 </Typography>
 
