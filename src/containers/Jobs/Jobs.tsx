@@ -18,7 +18,7 @@ const Jobs = () => {
 
     return <>
         <Typography variant="h3" color="primary">Employment</Typography>
-        <Typography variant="body2">Are you interested in joining the team?</Typography>
+        <Typography variant="body2">Are you interested in joining the team? We offer retirement &amp; health benefits.</Typography>
         <Paper variant="outlined">
             <List sx={{ width: "100%", maxWidth: 360, bgColor: "background.paper" }}>
                 {positions.map(({ title, icon, details, location }, i) => (<ListItem key={`${title}_${i}`} alignItems="flex-start">
