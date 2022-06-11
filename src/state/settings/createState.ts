@@ -4,6 +4,7 @@ const Copyright = '\u{a9}';
 
 const createState = (): IState => ({
     name: `Code Jamboree${TM}`,
+    tagline: 'Consulting for Software as a Service (SaaS)',
     license: `${Copyright} Copyright 2022, Code Jamboree LLC`,
     contactName: ["Lewis E. Moten, Member", "Code Jamboree LLC"],
     contactEmail: ["hello", "codejamboree.com"],

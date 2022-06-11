@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 const Home = () => {
     const name = useSelector(selectors.selectName);
+    const tagline = useSelector(selectors.selectTagline);
 
     return <>
         <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center" style={{ minHeight: '80vh' }}>
@@ -22,7 +23,7 @@ const Home = () => {
             <Grid item xs={3}>
                 <Paper variant="outlined">
                     <Typography variant="body2" color="inherit">
-                        Consulting services for frontend, backend, and fullstack development.
+                        {tagline}
                     </Typography>
                 </Paper>
             </Grid>

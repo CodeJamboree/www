@@ -5,6 +5,7 @@ import IState from './IState';
 const selectSlice = ({ settings = createState() } = {}): IState => settings;
 
 export const selectName = createSelector(selectSlice, ({ name }) => name);
+export const selectTagline = createSelector(selectSlice, ({ tagline }) => tagline);
 export const selectLicense = createSelector(selectSlice, ({ license }) => license);
 export const selectContactName = createSelector(selectSlice, ({ contactName }) => contactName);
 export const selectContactEmail = createSelector(selectSlice, ({ contactEmail }) => contactEmail?.join('@'));
