@@ -21,6 +21,7 @@ const Header = (): JSX.Element => {
     const pages = [
         homePage,
         { label: "Contact", value: '/contact' },
+        { label: "Social", value: '/socialmedia' },
     ];
 
     const [page, setPage] = useState(

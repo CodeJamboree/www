@@ -11,5 +11,8 @@ export default interface IState {
     contactPhone?: IPhone[],
     contactEmail?: string[],
     contactLocalMail?: string[],
-    contactMail?: string[]
+    contactMail?: string[],
+    facebook?: string,
+    twitter?: string,
+    linkedIn?: string
 };

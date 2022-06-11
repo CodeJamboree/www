@@ -11,7 +11,10 @@ const createState = (): IState => ({
         }
     ],
     contactLocalMail: ["PO Box 202", "Front Royal, Virginia 22630"],
-    contactMail: ["1108 East Main Street", "Suite 906 #2194", "Richmond, Virginia 23219"]
+    contactMail: ["1108 East Main Street", "Suite 906 #2194", "Richmond, Virginia 23219"],
+    facebook: "codejamboree",
+    twitter: "CodeJamboree",
+    linkedIn: "code-jamboree"
 });
 
 export default createState;
