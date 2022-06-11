@@ -11,7 +11,7 @@ interface IPosition {
 
 const positions = [] as IPosition[];
 
-const position = {
+let position = {
     title: 'React Web Developer',
     location: 'Remote',
     icon: 'laptop_mac',
@@ -33,6 +33,18 @@ position.details.push({text: `
 Typescript, Angular, Redux, Redux-Saga, sass/scss, webpack, JIRA,
 GitHub, HTML Canvas, Agile Development
 `})
+positions.push(position);
+// -----------------------------
+position = {
+    title: 'Developers',
+    location: 'Remote',
+    icon: 'laptop_mac',
+    details: []
+} as IPosition;
+
+position.details.push({text: `
+  Proficient in Java, React, Python, Angular, Kafka...
+`});
 positions.push(position);
 
 export default positions;
