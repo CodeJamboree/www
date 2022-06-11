@@ -13,7 +13,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 import * as selectors from '../../state/settings/selectors';
 
-const Contact = () => {
+const SocialMedia = () => {
     const facebookUrl = useSelector(selectors.selectFacebookUrl);
     const facebookUser = useSelector(selectors.selectFacebookUser);
     const linkedInUrl = useSelector(selectors.selectLinkedInUrl);
@@ -83,4 +83,4 @@ const Contact = () => {
 
     </>;
 }
-export default Contact;
+export default SocialMedia;
