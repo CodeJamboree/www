@@ -2,7 +2,7 @@ import IState from './IState';
 const createState = (): IState => ({
     name: "Code Jamboree\u{2122}", // TM
     license: "\u{a9} Copyright 2022, Code Jamboree LLC", // (C)
-    contactName: ["Lewis E. Moten, Owner", "Code Jamboree LLC"],
+    contactName: ["Lewis E. Moten, Member", "Code Jamboree LLC"],
     contactEmail: ["hello", "codejamboree.com"],
     contactPhone: [
         {
