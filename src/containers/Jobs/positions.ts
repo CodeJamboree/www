@@ -11,27 +11,30 @@ interface IPosition {
 
 const positions = [] as IPosition[];
 
+let details = [] as IDetail[];
 let position = {
     title: 'React Web Developer',
     location: 'Remote',
     icon: 'laptop_mac',
-    details: []
+    details
 } as IPosition;
 
-position.details.push({text: `
+details.push({text: `
     Use React functional components to query external sources
     while displaying a loading state. Work with both context
     and local state. Design responsive pages for desktop and
-    mobile platforms.
+    mobile platforms. Write unit tests to confirm features
+    work and are not broken in future developement.
 `});
-position.details.push({text: 'Skills needed', header: true})
-position.details.push({text: `
-    React, React Hooks, git, node, JavaScript, eslint, issue tracking
+details.push({text: 'Skills needed', header: true})
+details.push({text: `
+    React, React Hooks, git, node, JavaScript, eslint,
+    issue tracking, unit testing
 `})
-position.details.push({text: 'Skills preferred', header: true})
-position.details.push({text: `
+details.push({text: 'Skills preferred', header: true})
+details.push({text: `
 Typescript, Angular, Redux, Redux-Saga, sass/scss, webpack, JIRA,
-GitHub, HTML Canvas, Agile Development
+GitHub, HTML Canvas, Agile Development, Jest, Jasmine, Jenkins
 `})
 positions.push(position);
 // -----------------------------
