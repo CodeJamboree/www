@@ -29,9 +29,9 @@ details.push({
     while displaying a loading state. Work with both context
     and local state. Design responsive pages for desktop and
     mobile platforms. Write unit tests to confirm features
-    work and are not broken in future developement. Document
-    components using markdown. Build packages with webpack
-    using nodejs and deploy to npm. Work in an agile/scrum
+    work and are not broken in future development. Document
+    components using markdown. Build packages with Webpack
+    using NodeJS and deploy to NPM. Work in an agile/scrum
     environment.
 `});
 details.push({
