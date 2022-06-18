@@ -28,17 +28,28 @@ describe("ErrorBoundary", () => {
     });
   });
   describe("with error", () => {
-    let originalConsole: { (...args: any[]): void };
-    const mockError = jest.fn();
+    let originalConsoleError: { (...args: any[]): void };
+    const mockError = new Error("Test Failure");
     const FailingComponent = () => {
-      throw new Error("Test Failure");
+      throw mockError;
     };
-    beforeEach(() => {
-      originalConsole = global.console.error;
-      global.console.error = mockError;
+    beforeAll(() => {
+      originalConsoleError = global.console.error;
+      global.console.error = jest.fn().mockImplementation((...args) => {
+        const [arg1] = args;
+        if (typeof arg1 === "string" && arg1.includes("<FailingComponent>"))
+          return;
+        if (
+          typeof arg1 === "object" &&
+          arg1?.detail?.message === "Test Failure"
+        )
+          return;
+        // unexpected error - let it go through
+        originalConsoleError.call(global.console, ...args);
+      });
     });
-    afterEach(() => {
-      global.console.error = originalConsole;
+    afterAll(() => {
+      global.console.error = originalConsoleError;
     });
     describe(".fallback", () => {
       it("renders default", () => {
