@@ -7,7 +7,7 @@
     "build": "webpack --node-env=production",
     "start": "webpack-dev-server --node-env=development",
     "test": "jest",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write . --ignore-path .gitignore"
   },
   "repository": {
     "type": "git",
