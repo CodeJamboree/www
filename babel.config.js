@@ -22,6 +22,29 @@ const config = {
       '@babel/plugin-transform-runtime',
     ],
     env: {
+      test: {
+        presets: [
+          [
+          '@babel/preset-env',
+          {
+            modules: "commonjs",
+          },
+        ],
+        [
+          '@babel/preset-typescript',
+          {
+            isTSX: true,
+            allExtensions: true
+          }
+        ],
+        [
+          '@babel/preset-react',
+          {
+            runtime: "automatic"
+          }
+        ],
+      ],
+      },
       production: {
         only: ['src'],
         plugins: [
