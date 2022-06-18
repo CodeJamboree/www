@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --node-env=production",
     "start": "webpack-dev-server --node-env=development",
-    "test": "jest"
+    "test": "jest",
+    "pretty": "prettier --write ."
   },
   "repository": {
     "type": "git",
