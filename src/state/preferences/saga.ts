@@ -1,12 +1,10 @@
-import { all, takeEvery, select, put, call } from 'redux-saga/effects';
-import * as actions from './actions';
+import { all, takeEvery, select, put, call } from "redux-saga/effects";
+import * as actions from "./actions";
 
 function* onToggleDarkMode() {
-    yield;
+  yield;
 }
 
 export default function* handleRequestSaga() {
-    yield all([
-      takeEvery(actions.toggleDarkMode.TRIGGER, onToggleDarkMode),
-    ]);
-  }
+  yield all([takeEvery(actions.toggleDarkMode.TRIGGER, onToggleDarkMode)]);
+}

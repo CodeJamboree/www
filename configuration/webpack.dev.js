@@ -1,18 +1,18 @@
 /* eslint-env node */
-const common = require('./webpack.common');
+const common = require("./webpack.common");
 
 const chunkFilename = ({ chunk: { id } }) =>
-  /^vendors-/.test(id) ? 'vendors/[contenthash:8].js' : '[name].js';
+  /^vendors-/.test(id) ? "vendors/[contenthash:8].js" : "[name].js";
 
 module.exports = (env, argv) => {
-  argv.mode = 'development';
+  argv.mode = "development";
 
   let config = common(env, argv);
 
   return {
     ...config,
-    mode: 'development',
-    devtool: 'cheap-module-source-map',
+    mode: "development",
+    devtool: "cheap-module-source-map",
     module: {
       ...config.module,
       rules: [
@@ -21,11 +21,11 @@ module.exports = (env, argv) => {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
               cacheDirectory: true,
               cacheCompression: false,
-              envName: 'development',
+              envName: "development",
             },
           },
         },
@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
       open: true,
       client: {
         overlay: true,
-        logging: 'info',
+        logging: "info",
         progress: true,
         reconnect: true,
       },

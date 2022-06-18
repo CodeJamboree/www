@@ -5,11 +5,11 @@ import settings from "./settings";
 
 import * as actions from "./actions";
 import { Action } from "redux-actions";
-import createRootState from './createRootState';
+import createRootState from "./createRootState";
 
 const reducers = {
   preferences,
-  settings
+  settings,
 };
 
 const sliceReducers = combineReducers(reducers);

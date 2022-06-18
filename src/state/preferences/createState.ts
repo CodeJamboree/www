@@ -1,6 +1,6 @@
-import IState from './IState';
+import IState from "./IState";
 const createState = (): IState => ({
-    isDarkMode: false
+  isDarkMode: false,
 });
 
 export default createState;

@@ -7,30 +7,26 @@ import Home from "../Home";
 import Fallback from "./Fallback";
 import Template from "./Template";
 import FallbackMessage from "../../components/FallbackMessage";
-import pages from './pages';
+import pages from "./pages";
 
-const [
-    ,
-    { value: contactPath},
-    { value: socialPath},
-    { value: joinPath}
-] = pages;
+const [, { value: contactPath }, { value: socialPath }, { value: joinPath }] =
+  pages;
 
 const Router = () => (
-    <BrowserRouter>
-        <Suspense fallback={<FallbackMessage message="Loading Template"/>}>
-            <Template>
-                <Suspense fallback={<Fallback />}>
-                    <Routes>
-                        <Route path={contactPath} element={< Contact />} />
-                        <Route path={socialPath} element={< SocialMedia />} />
-                        <Route path={joinPath} element={< Jobs />} />
-                        <Route path="*" element={< Home />} />
-                    </Routes>
-                </Suspense>
-            </Template>
+  <BrowserRouter>
+    <Suspense fallback={<FallbackMessage message="Loading Template" />}>
+      <Template>
+        <Suspense fallback={<Fallback />}>
+          <Routes>
+            <Route path={contactPath} element={<Contact />} />
+            <Route path={socialPath} element={<SocialMedia />} />
+            <Route path={joinPath} element={<Jobs />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
         </Suspense>
-    </BrowserRouter>
+      </Template>
+    </Suspense>
+  </BrowserRouter>
 );
 
 export default Router;

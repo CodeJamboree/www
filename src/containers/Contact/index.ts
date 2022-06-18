@@ -1,2 +1,4 @@
-import { lazy } from 'react';
-export default lazy(() => import(/* webpackChunkName: 'contact' */ './Contact'));
+import { lazy } from "react";
+export default lazy(
+  () => import(/* webpackChunkName: 'contact' */ "./Contact")
+);

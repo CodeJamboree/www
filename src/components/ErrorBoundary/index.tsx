@@ -24,7 +24,7 @@ class ErrorBoundary extends Component<Props, State> {
       // do nothing
     }
   }
-  public render() : JSX.Element {
+  public render(): JSX.Element {
     const { fallback = "Error", children } = this.props;
     return <Wrap>{this.state.failed ? fallback : children}</Wrap>;
   }

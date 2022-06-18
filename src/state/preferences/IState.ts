@@ -1,4 +1,3 @@
-
 export default interface IState {
-    isDarkMode: boolean
-};
+  isDarkMode: boolean;
+}
