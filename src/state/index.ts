@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 
 import preferences from "./preferences";
 import settings from "./settings";
+import media from "./media";
 
 import * as actions from "./actions";
 import { Action } from "redux-actions";
@@ -10,6 +11,7 @@ import createRootState from "./createRootState";
 const reducers = {
   preferences,
   settings,
+  media,
 };
 
 const sliceReducers = combineReducers(reducers);

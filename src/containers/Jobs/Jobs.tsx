@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 
 import positions from "./positions";
 import { useSelector } from "react-redux";
-import Devicon from "./Devicon";
+import Devicon from "../../components/Devicon";
 
 const Jobs = () => {
   const name = useSelector(selectors.selectName);

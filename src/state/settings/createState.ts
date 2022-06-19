@@ -20,9 +20,6 @@ const createState = (): IState => ({
     "Suite 906 #2194",
     "Richmond, Virginia 23219",
   ],
-  facebook: "codejamboree",
-  twitter: "CodeJamboree",
-  linkedIn: "code-jamboree",
 });
 
 export default createState;

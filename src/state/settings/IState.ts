@@ -12,7 +12,4 @@ export default interface IState {
   contactEmail?: string[];
   contactLocalMail?: string[];
   contactMail?: string[];
-  facebook?: string;
-  twitter?: string;
-  linkedIn?: string;
 }

@@ -7,7 +7,8 @@ import {
 const actionBuilder = (domain: string, emoji: string) => {
   const actionTypePrefix = (action: string) => `${domain} ${emoji} ${action}`;
 
-  const build = (action: string) => createRoutine(actionTypePrefix(action));
+  const build = <T = any>(action: string) =>
+    createRoutine<T>(actionTypePrefix(action));
 
   const withStages = (action: string, ...stages: string[]) => {
     const creator = createRoutineCreator([...defaultRoutineStages, ...stages]);

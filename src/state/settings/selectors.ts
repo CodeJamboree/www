@@ -43,33 +43,3 @@ export const selectContactPhoneMobileUrl = createSelector(
   selectContactPhoneMobile,
   (number) => `tel:${number?.replace(/[^+\d]/g, "")}`
 );
-
-const selectFacebook = createSelector(selectSlice, ({ facebook }) => facebook);
-export const selectFacebookUser = createSelector(
-  selectFacebook,
-  (facebook) => `@${facebook}`
-);
-export const selectFacebookUrl = createSelector(
-  selectFacebook,
-  (facebook) => `https://facebook.com/${facebook}`
-);
-
-const selectLinkedIn = createSelector(selectSlice, ({ linkedIn }) => linkedIn);
-export const selectLinkedInUser = createSelector(
-  selectLinkedIn,
-  (linkedIn) => `@${linkedIn}`
-);
-export const selectLinkedInUrl = createSelector(
-  selectLinkedIn,
-  (linkedIn) => `https://linkedin.com/company/${linkedIn}`
-);
-
-const selectTwitter = createSelector(selectSlice, ({ twitter }) => twitter);
-export const selectTwitterUser = createSelector(
-  selectTwitter,
-  (twitter) => `@${twitter}`
-);
-export const selectTwitterUrl = createSelector(
-  selectTwitter,
-  (twitter) => `https://twitter.com/${twitter}`
-);
