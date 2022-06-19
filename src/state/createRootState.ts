@@ -1,5 +1,5 @@
 import createSettingsState from "./settings/createState";
-import createPreferencesState from "./settings/createState";
+import createPreferencesState from "./preferences/createPreferencesState";
 import createMediaState from "./media/createMediaState";
 
 const createRootState = () => ({

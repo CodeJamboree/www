@@ -8,10 +8,6 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import Devicon from "../../components/Devicon";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import GitHubIcon from "@mui/icons-material/GitHub";
 
 import * as selectors from "../../state/media/selectors";
 
@@ -32,14 +28,14 @@ const SocialMedia = () => {
           sx={{ width: "100%", maxWidth: 360, bgColor: "background.paper" }}
         >
           {allIds.map((id) => {
-            const item = byId[id];
+            const { icon, name, url, username } = byId[id];
             return (
               <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                  <Devicon icon={item.icon} />
+                  <Devicon icon={icon} />
                 </ListItemAvatar>
                 <ListItemText
-                  primary={item.name}
+                  primary={name}
                   secondary={
                     <Button
                       variant="text"
@@ -48,9 +44,9 @@ const SocialMedia = () => {
                       rel="noopener noreferrer"
                       sx={{ textTransform: "none" }}
                       color="info"
-                      href={item.url}
+                      href={url}
                     >
-                      {item.username}
+                      {username}
                     </Button>
                   }
                 />

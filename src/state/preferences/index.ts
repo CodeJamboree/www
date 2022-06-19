@@ -1,22 +1,28 @@
-import { handleActions } from "redux-actions";
+import { Action, handleActions } from "redux-actions";
 import produce from "immer";
 import * as actions from "./actions";
-import createState from "./createState";
+import createPreferencesState from "./createPreferencesState";
+import IPreferencesSlice from "./IPreferencesSlice";
 
-const initialState = createState();
+const initialState = createPreferencesState();
 
-const onToggleDarkMode = produce((draft, action) => {
-  draft.isDarkMode = !draft.isDarkMode;
+const onToggleDarkMode = produce<IPreferencesSlice>((draft) => {
+  draft.byId.darkMode.flagged = !draft.byId.darkMode.flagged;
 });
 
-const onChangeDarkModePreference = produce((draft, action) => {
-  draft.isDarkMode = action.payload;
+const onChangeDarkModePreference = produce<
+  IPreferencesSlice,
+  Action<boolean>[]
+>((draft, action) => {
+  draft.byId.darkMode.flagged = action.payload;
 });
 
-export default handleActions(
+const reducer = handleActions<IPreferencesSlice, any>(
   {
     [actions.toggleDarkMode.TRIGGER]: onToggleDarkMode,
     [actions.changeDarkModePreference.TRIGGER]: onChangeDarkModePreference,
   },
   initialState
 );
+
+export default reducer;
