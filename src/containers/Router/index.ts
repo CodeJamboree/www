@@ -1,2 +1,2 @@
-import { lazy } from 'react';
-export default lazy(() => import(/* webpackChunkName: 'router' */ './Router'));
+import { lazy } from "react";
+export default lazy(() => import(/* webpackChunkName: 'router' */ "./Router"));

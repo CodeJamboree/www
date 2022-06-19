@@ -11,12 +11,10 @@ const initialHydratedState = undefined;
 const sagaMiddleware = reduxSaga();
 
 const exportedConfigureStore = () => {
-  const store = configureStore(
-    {
-      reducer,
-      middleware: [reduxThunk, sagaMiddleware]
-    }
-  );
+  const store = configureStore({
+    reducer,
+    middleware: [reduxThunk, sagaMiddleware],
+  });
 
   store.runSaga = sagaMiddleware.run;
   store.asyncReducers = {};

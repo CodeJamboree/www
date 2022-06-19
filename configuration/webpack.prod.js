@@ -32,10 +32,8 @@ module.exports = (env, argv) => {
     plugins: [
       ...config.plugins,
       new CopyPlugin({
-        patterns: [
-          { from: "src/seo" }
-        ]
-      })
-    ]
+        patterns: [{ from: "src/seo" }],
+      }),
+    ],
   };
 };

@@ -1,7 +1,14 @@
-import { createSelector } from 'reselect';
-import createState from './createState';
-import IState from './IState';
+import { createSelector } from "reselect";
+import createPreferencesState from "./createPreferencesState";
+import IPreferencesSlice from "./IPreferencesSlice";
 
-const selectSlice = ({ preferences = createState() } = {}): IState => preferences;
+const selectSlice = ({
+  preferences = createPreferencesState(),
+} = {}): IPreferencesSlice => preferences;
 
-export const selectIsDarkMode = createSelector(selectSlice, ({ isDarkMode }) => isDarkMode);
+const selectById = createSelector(selectSlice, ({ byId }) => byId);
+
+export const selectIsDarkMode = createSelector(
+  selectById,
+  (byId) => byId.darkMode.flagged
+);
