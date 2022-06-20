@@ -2,6 +2,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = () => {
   const config = {
@@ -21,14 +22,16 @@ module.exports = () => {
             "http-equiv": "Content-Type",
             content: "text/html; charset=utf-8",
           },
-          description:
-            "IT Consulting Services for frontend, backend, and fullstack web development.",
+          description: "Consulting for Software as a Service (SaaS)",
           viewport: "initial-scale=1, width=device-width",
         },
       }),
       new webpack.EnvironmentPlugin(["NODE_ENV"]),
       new webpack.ProvidePlugin({
         Buffer: ["buffer", "Buffer"],
+      }),
+      new CopyPlugin({
+        patterns: [{ from: "src/seo" }],
       }),
     ],
     module: {
